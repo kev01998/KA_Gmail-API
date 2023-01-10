@@ -26,6 +26,7 @@ def send_message(service, user_id, message):
   except Exception as e:
     print('An error occurred: %s' % e)
     return None
+
 #Logic code to create messages
 def create_message(sender, to, subject, message_text):
 #Sender: email address of sender
@@ -40,6 +41,7 @@ def create_message(sender, to, subject, message_text):
   return {
     'raw': raw_message.decode("utf-8")
   }
+
 #Logic code to search for matching messages.
 #Attention: this function only return message IDs of matching messages.
 
@@ -121,7 +123,7 @@ def main():
             
         except:
             pass 
-        #Creating csv file with content of matching messages.  
+        #Creating csv file to add content of matching messages.  
         content2.to_csv('MatchingMessages.csv',index=False)
         print("CSV File created successfully") 
             
